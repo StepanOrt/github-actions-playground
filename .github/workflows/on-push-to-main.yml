@@ -21,9 +21,6 @@ jobs:
           version=$(cat version)
           echo version=$version
           echo version=$version >> $GITHUB_OUTPUT
-          echo "Existing tags:"
-          git tag
-          echo "regex=^${version}$"
           tag_exists=$(git tag | grep -qE "^${version}$" && echo "true" || echo "false")
           echo tag_exists=$tag_exists
           echo tag_exists=$tag_exists >> $GITHUB_OUTPUT
