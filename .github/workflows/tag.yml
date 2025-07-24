@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4  
       - id: read_version
-        run: 'VERSION=$(cat version) >> $GITHUB_OUTPUT'
+        run: 'pwd; ls; VERSION=$(cat version) >> $GITHUB_OUTPUT'
       - run: 'echo ${{ steps.read_version.outputs.VERSION }}'
       - name: Push tag
         id: tag
