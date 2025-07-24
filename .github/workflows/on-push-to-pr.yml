@@ -1,0 +1,8 @@
+name: On push to PR
+on:
+  pull_request:
+
+jobs:
+  test:
+    uses: ./.github/workflows/test.yml
+
