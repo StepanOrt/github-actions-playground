@@ -2,16 +2,11 @@ name: Test
 run-name: "Test: ${{ github.event.head_commit.message }}"
 on:
   workflow_call:
-    
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: |
-          echo "$GITHUB_CONTEXT"
       - uses: actions/checkout@v4
       - name: Test
         run: '[[ "$(cat test)" == "pass" ]]'
