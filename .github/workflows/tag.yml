@@ -1,4 +1,5 @@
 name: Tag
+run-name: "Tag: ${{ github.head_ref }}"
 on:
   workflow_run:
     workflows: [ "Test" ]
