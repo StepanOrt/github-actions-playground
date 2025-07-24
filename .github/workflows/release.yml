@@ -13,6 +13,7 @@ jobs:
     permissions:
       contents: write
     steps:
+      - uses: actions/checkout@v4  
       - id: read_version
         run: 'VERSION=$(cat version) >> $GITHUB_OUTPUT'
       - uses: softprops/action-gh-release@v2
