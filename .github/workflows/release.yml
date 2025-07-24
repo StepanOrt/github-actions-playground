@@ -2,10 +2,11 @@ name: Release
 on:
   push: 
     tags:
+      - "*"
 
 jobs:
   release:
-    if: github.ref_type == 'tag'
+
     permissions:
       contents: write
     runs-on: ubuntu-latest
