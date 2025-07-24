@@ -14,7 +14,11 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-      - run: 'echo ${{ github.event.workflow_run }}'
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo "$GITHUB_CONTEXT"
       - uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
