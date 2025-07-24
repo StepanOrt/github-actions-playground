@@ -58,7 +58,6 @@ jobs:
     needs:
       - release
     runs-on: ubuntu-latest
-    if: ${{ github.event.release.draft == 'success' }}
     steps:
       - uses: actions/checkout@v4
       - run: 'echo "Would publish version ${{ needs.release.outputs.name }}"'
