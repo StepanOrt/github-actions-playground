@@ -1,5 +1,5 @@
 name: Tag
-run-name: "Tag: ${{ github.head_ref }}"
+run-name: "Tag: ${{ github.event.head_commit.message }}"
 on:
   workflow_run:
     workflows: [ "Test" ]
